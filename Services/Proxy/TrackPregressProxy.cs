@@ -2,6 +2,8 @@
 using core.Abstractions;
 using core.Interfaces;
 using core.Models;
+using System.Collections.Generic;
+using MongoDB.Driver;
 
 namespace core.Services.Proxy
 {
@@ -9,6 +11,11 @@ namespace core.Services.Proxy
     {
         protected override string GetCollectionName() => "TrackPregress";
 
-        public TrackPregressProxy(IMongoConnector connector, IConfiguration config) : base(connector, config) {}
+        public TrackPregressProxy(IMongoConnector connector, IConfiguration config) : base(connector, config) { }
+
+        public List<TrackProgress> FindAllByAccountId(string accountId)
+        {
+            return Collection.Find(item => item.AccountId == accountId).ToList();
+        }
     }
 }
