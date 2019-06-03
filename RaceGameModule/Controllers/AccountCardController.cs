@@ -11,9 +11,9 @@ namespace RaceGameModule.Controllers
     public class AccountCardController : ControllerBase
     {
         private readonly AccountProxy AccountProxy;
-        private readonly TrackPregressProxy TrackDataProxy;
+        private readonly TrackProgressProxy TrackDataProxy;
 
-        public AccountCardController(AccountProxy proxyService, TrackPregressProxy trackDataProxy)
+        public AccountCardController(AccountProxy proxyService, TrackProgressProxy trackDataProxy)
         {
             AccountProxy = proxyService;
             TrackDataProxy = trackDataProxy;

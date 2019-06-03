@@ -8,7 +8,7 @@ namespace RaceGameModule
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<Proxy.AccountProxy>();
-            services.AddScoped<Proxy.TrackPregressProxy>();
+            services.AddScoped<Proxy.TrackProgressProxy>();
         }
 
     }

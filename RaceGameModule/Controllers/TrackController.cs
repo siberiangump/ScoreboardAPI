@@ -9,9 +9,9 @@ namespace RaceGameModule.Controllers
     [ApiController]
     public class TrackController : ControllerBase
     {
-        private readonly TrackPregressProxy TrackDataProxy;
+        private readonly TrackProgressProxy TrackDataProxy;
 
-        public TrackController(TrackPregressProxy trackDataProxy)
+        public TrackController(TrackProgressProxy trackDataProxy)
         {
             TrackDataProxy = trackDataProxy;
         }
