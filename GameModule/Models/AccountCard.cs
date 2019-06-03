@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace core.Models
+namespace RaceGameModule.Models
 {
     public class AccountCard
     {

@@ -1,8 +1,8 @@
-﻿using core.Abstractions;
+﻿using Scoreboard.Abstractions;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace core.Models
+namespace RaceGameModule.Models
 {
     public class Account : AbstractMongoModel
     {

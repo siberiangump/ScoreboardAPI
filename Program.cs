@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 
 
-namespace core
+namespace Scoreboard
 {
     public class Program
     {

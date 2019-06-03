@@ -6,7 +6,7 @@ using core.Abstractions;
 using core.Interfaces;
 using core.Models;
 
-namespace core.Services.Proxy
+namespace RaceGameModule.Proxy
 {
     public sealed class AccountProxy : AbstractMongoCollectionProxy<Account>
     {

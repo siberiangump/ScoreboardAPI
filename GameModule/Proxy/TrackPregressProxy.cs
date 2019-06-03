@@ -5,7 +5,7 @@ using core.Models;
 using System.Collections.Generic;
 using MongoDB.Driver;
 
-namespace core.Services.Proxy
+namespace RaceGameModule.Proxy
 {
     public sealed class TrackPregressProxy : AbstractMongoCollectionProxy<TrackProgress>
     {

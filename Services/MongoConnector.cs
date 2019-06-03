@@ -1,8 +1,8 @@
-﻿using core.Interfaces;
+﻿using Scoreboard.Interfaces;
 using Microsoft.Extensions.Configuration;
 using MongoDB.Driver;
 
-namespace core.Services
+namespace Scoreboard.Services
 {
     public class MongoConnector: IMongoConnector
     {

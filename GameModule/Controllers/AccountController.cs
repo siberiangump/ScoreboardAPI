@@ -1,47 +1,47 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using core.Models;
 using core.Services.Proxy;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace core.Controllers
+namespace RaceGameModule.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AccountCardController : ControllerBase
+    public class AccountController : ControllerBase
     {
         private readonly AccountProxy AccountProxy;
-        private readonly TrackPregressProxy TrackDataProxy;
 
-        public AccountCardController(AccountProxy proxyService, TrackPregressProxy trackDataProxy)
+        public AccountController(AccountProxy proxyService)
         {
             AccountProxy = proxyService;
-            TrackDataProxy = trackDataProxy;
         }
 
         [HttpGet]
-        public ActionResult<List<Account>> Get()
+        public async Task<ActionResult<List<Account>>> Get()
         {
-            return AccountProxy.Get();
+            return await Task.Run( ()=> AccountProxy.Get());
         }
 
-        [HttpGet("{id:length(24)}", Name = "GetAccount")]
-        public ActionResult<AccountCard> Get(string id)
+        [HttpGet("{id:length(24)}", Name = "GetItem")]
+        public async Task<ActionResult<Account>> Get(string id)
         {
-            var account = AccountProxy.Get(id);
-            if (account == null)
+            var item = await Task.Run(()=> AccountProxy.Get(id));
+
+            if (item == null)
             {
                 return NotFound();
             }
-            var trackProgress = TrackDataProxy.FindAllByAccountId(id);
-            return new AccountCard(account, trackProgress);
+
+            return item;
         }
 
         [HttpPost]
-        public ActionResult<AccountCard> Create(Account item)
+        public ActionResult<Account> Create([FromBody]Account item)
         {
             AccountProxy.Create(item);
-            return CreatedAtRoute("GetAccount", new { id = item.Id.ToString() }, item);
+            return CreatedAtRoute("GetItem", new { id = item.Id.ToString() }, item);
         }
 
         [HttpPut("{id:length(24)}")]
@@ -58,7 +58,7 @@ namespace core.Controllers
 
             return NoContent();
         }
-        
+
         [HttpDelete("{id:length(24)}")]
         public IActionResult Delete(string id)
         {

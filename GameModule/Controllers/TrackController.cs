@@ -4,7 +4,7 @@ using core.Services.Proxy;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace core.Controllers
+namespace RaceGameModule.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
