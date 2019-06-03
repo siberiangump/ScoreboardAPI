@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
-using core.Models;
-using core.Services.Proxy;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using RaceGameModule.Models;
+using RaceGameModule.Proxy;
 
 namespace RaceGameModule.Controllers
 {

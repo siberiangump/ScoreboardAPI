@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using core.Models;
-using core.Services.Proxy;
 using Microsoft.AspNetCore.Mvc;
+using RaceGameModule.Models;
+using RaceGameModule.Proxy;
 
 namespace RaceGameModule.Controllers
 {

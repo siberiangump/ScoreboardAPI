@@ -39,7 +39,6 @@ namespace Scoreboard
             }
 
             app.UseHttpsRedirection();
-            app.UseSession();
             app.UseMvc();
         }
     }

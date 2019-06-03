@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.Configuration;
-using core.Abstractions;
-using core.Interfaces;
-using core.Models;
 using System.Collections.Generic;
 using MongoDB.Driver;
+using Scoreboard.Abstractions;
+using Scoreboard.Interfaces;
+using RaceGameModule.Models;
 
 namespace RaceGameModule.Proxy
 {
